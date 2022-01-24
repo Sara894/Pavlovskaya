@@ -16,7 +16,7 @@ int main()
     float fahr, cels;
     cout << endl << " Введите температуру по Фаренгейту" << endl;
     cin >> fahr;
-    cels = 5.0 / 9 * (fahr - 32);
+    cels = 5 * (fahr - 32) / 9;
     cout << " По Фаренгейту: " << fahr << ", в градусах Цельсия: "
         << cels << endl;
     return 0;
