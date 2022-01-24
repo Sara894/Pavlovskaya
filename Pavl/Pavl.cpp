@@ -10,21 +10,17 @@
 //где С - температура по Цельсию, а F - по Фаренгейту.
 using namespace std;
 
-char* Rus(const char* text);
 int main()
 {
+    setlocale(LC_ALL, "Ru");
     float fahr, cels;
-    cout << endl << Rus(" Введите температуру по Фаренгейту") << endl;
+    cout << endl << " Введите температуру по Фаренгейту" << endl;
     cin >> fahr;
     cels = 5 / 9 * (fahr - 32);
-    cout << Rus(" По Фаренгейту: ") << fahr << Rus(", в градусах Цельсия: ")
+    cout << " По Фаренгейту: " << fahr << ", в градусах Цельсия: "
         << cels << endl;
     return 0;
 }
 
-char bufRus[256];
-char* Rus(const char* text) {
-    CharTo0em(text, bufRus);
-    return bufRus; 
-}
+
 
