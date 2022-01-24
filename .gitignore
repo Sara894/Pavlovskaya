@@ -72,6 +72,10 @@ StyleCopReport.xml
 *.meta
 *.obj
 *.iobj
+*.vcxproj.filters
+*.vcxproj.user
+*.vcxproj
+*.sln
 *.pch
 *.pdb
 *.ipdb
