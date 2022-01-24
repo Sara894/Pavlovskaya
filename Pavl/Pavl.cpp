@@ -9,11 +9,11 @@
 //C = 5/9(F-32)
 //где С - температура по Цельсию, а F - по Фаренгейту.
 using namespace std;
+float fahr, cels;
 
 int main()
 {
     setlocale(LC_ALL, "Ru");
-    float fahr, cels;
     printf("\n Введите температуру по Фаренгейту\n");
     scanf("%f", &fahr);
     cels = 5 * (fahr - 32)/ 9;
