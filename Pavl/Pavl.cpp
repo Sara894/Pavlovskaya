@@ -1,5 +1,5 @@
 ﻿#include <iostream>
-#include <windows.h>
+#include <stdio.h>
 //Т.А. Павловская, Ю.А. Щупак
 //С/С++ Структурное программирование. Практикум
 //Семинар 1. Линейные программы.
@@ -14,11 +14,10 @@ int main()
 {
     setlocale(LC_ALL, "Ru");
     float fahr, cels;
-    cout << endl << " Введите температуру по Фаренгейту" << endl;
-    cin >> fahr;
-    cels = 5 * (fahr - 32) / 9;
-    cout << " По Фаренгейту: " << fahr << ", в градусах Цельсия: "
-        << cels << endl;
+    printf("\n Введите температуру по Фаренгейту\n");
+    scanf("%f", &fahr);
+    cels = 5 * (fahr - 32)/ 9;
+    printf(" По Фаренгейту: %6.2f, в градусах Цельсия: %6.2f\n ", fahr, cels);
     return 0;
 }
 
