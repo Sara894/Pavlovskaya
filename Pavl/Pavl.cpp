@@ -18,16 +18,18 @@ using namespace std;
 int main()
 {
 	setlocale(LC_ALL, "Ru");
-	float a;
-	cout << " Введите угол a в градусах: " << endl;
-	cin >> a;
+	float x, y;
+	cout << " Введите углы x y a в градусах через пробел: " << endl;
+	cin >> x >> y;
 	//переводим размерность величины а из градусов в радианы
-	a *= M_PI / 180;
-	float z1 = pow(cos(3*M_PI/8 - a/4),2) - pow(cos(11*M_PI/8 + a/4),2);
-	float z2 = M_SQRT2*sin(a/2)/2;
+	x *= M_PI / 180;
+	y *= M_PI / 180;
+	float z1 = pow(cos(x),4) + pow(sin(y),2) + 0.25*pow(sin(2 * x),2) - 1;
+	float z2 = sin(y+x)*sin(y-x);
 	cout << " Выражение z1 равно " << z1 << ";" << endl;
 	cout << " выражение z2 равно " << z2 << endl;
-	cout << " при а, равном " << (a / M_PI) * 180 << " градусам" << endl;
+	cout << " при x, равном " << (x / M_PI) * 180 << " градусам" << endl;
+	cout << " при y, равном " << (y / M_PI) * 180 << " градусам" << endl;
 	return 0;
 }
 
