@@ -23,8 +23,8 @@ int main()
 	cin >> a;
 	//переводим размерность величины а из градусов в радианы
 	a *= M_PI / 180;
-	float z1 = cos(a) + cos(2*a) + cos(6*a) + cos(7*a);
-	float z2 = 4*cos(a/2)*cos(5*a/2)*cos(4*a);
+	float z1 = pow(cos(3*M_PI/8 - a/4),2) - pow(cos(11*M_PI/8 + a/4),2);
+	float z2 = M_SQRT2*sin(a/2)/2;
 	cout << " Выражение z1 равно " << z1 << ";" << endl;
 	cout << " выражение z2 равно " << z2 << endl;
 	cout << " при а, равном " << (a / M_PI) * 180 << " градусам" << endl;
