@@ -15,7 +15,7 @@ int main()
 	float x, y;
 	cout << "Введите значения x и y:" << endl;
 	cin >> x >> y;
-	if (x * x + y * y <= 1 || x <= 0 && y <= 0 && y >= -x - 2)
+	if (y < 0 && ((x - 1) * (x - 1) + y * y <= 1 || (x + 1) * (x + 1) + y * y <= 1))
 		cout << "Точка попадает в область" << endl;
 	else cout << "Точка не попадает в область" << endl;
 	return 0;
