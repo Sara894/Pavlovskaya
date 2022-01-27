@@ -15,6 +15,7 @@ int main()
 	int key;
 	printf("\n Нажмите одну из курсорных клавиш: \n");
 	key = getch(); key = getch();
+	cout << "key: " << key << endl;
 	switch (key) {
 	case 77: printf("стрелка вправо \n"); break;
 	case 75: printf("стрелка влево \n"); break;
