@@ -23,14 +23,13 @@ int main()
 	cout << "--------------------" << endl;
 	cout << "|      X     |      Y     |\n" << endl;
 	cout << "--------------------" << endl;
-	double x = Xn;
-	while (x <= Xk) {
+	for (double x = Xn; x < Xk; x += dX)
+	{
 		if (x < 0) y = t;
 		if (x >= 0 && x < 10) y = t * x;
-		if (x >= 10) y = 2 * t;
-		if (t > 100) cout << "|   " << x << "   |    " <<(int)y << "    |" << endl;
-		else cout << "|   " << x << "   |    " << y << "    |" << endl;
-		x += dX;
+		if (x >= 10) y = 2*t;
+		if (t > 100) cout << "    " << x << "    " << (int)y << endl;
+		else cout << "    " << x << "    " << y << endl;
 	}
 	cout << "------------------------" << endl;
 	return 0;
