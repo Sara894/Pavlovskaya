@@ -28,7 +28,7 @@ int main()
 		if (x < 0) y = t;
 		if (x >= 0 && x < 10) y = t * x;
 		if (x >= 10) y = 2*t;
-		if (t > 100) cout << "    " << x << "    " << (int)y << endl;
+		if (t > 100) cout << "    " << x << "    " << static_cast<int>(y) << endl;
 		else cout << "    " << x << "    " << y << endl;
 	}
 	cout << "------------------------" << endl;
