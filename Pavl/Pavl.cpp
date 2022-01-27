@@ -17,7 +17,22 @@ using namespace std;
 int main()
 {
 	setlocale(LC_ALL, "Ru");
-	
+	double Xn, Xk, dX, t, y;
+	printf("Enter Xnm Xk, dX, t \n");
+	scanf("%lf%lf%lf%lf", &Xn, &Xk, &dX, &t);
+	printf(" --------------------------- \n");
+	printf("|     X    |    Y    | \n");
+	printf(" --------------------------- \n");
+	double x = Xn;//начальные установки
+	while (x <= Xk) {
+		if (x < 0) y = t;//тело цикла
+		if (x < 10 && x >= 0) y = t * x;
+		if (x >= 10) y = 2 * t;
+		if (t > 100) printf("|%9.2lf    |%9d    |\n", x, (int)y);
+		else printf("|%9.2lf    |%9.2lf          |\n", x, y);
+		x += dX;//модификация параметров цикла
+	}
+	printf("------------------------- \n");
 	return 0;
 }
 
