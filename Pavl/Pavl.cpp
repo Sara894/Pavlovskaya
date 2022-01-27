@@ -17,10 +17,7 @@ int main()
 	key = getch(); key = getch();
 	cout << "key: " << key << endl;
 	switch (key) {
-	case 77: printf("стрелка вправо \n"); break;
-	case 75: printf("стрелка влево \n"); break;
-	case 72: printf("стрелка вверх \n"); break;
-	case 80: printf("стрелка вниз \n"); break;
+	case 77: case 75: case 72: case 80: printf("стрелки \n"); break;
 	default: printf("не стрелка \n"); break;
 	}
 	return 0;
