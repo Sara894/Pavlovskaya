@@ -26,6 +26,7 @@ int main()
 	if (n < MaxIter) {
 		cout << "function value: " << y << " for x = " << x << endl;
 		cout << " calculated after " << n << " iterations " << endl;
+		cout << " calculated with library math.h function cosh(x) = " << cosh(x) << endl;
 	}
 	else cout << "\n The series diverges!" << endl;
 	return 0;
