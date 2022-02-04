@@ -14,7 +14,7 @@ int main()
 {
 	setlocale(LC_ALL, "Ru");
 	const int MaxIter = 500;//максимально допустимое количество итераций
-	double x, eps = DBL_EPSILON;
+	double x, eps = DBL_EPSILON;//максимально допустимая точность
 	cout << "\nEnter a argument : " << endl;
 	cin >> x;
 	double ch = 1, y = ch;//first term of series and initial value of sum
