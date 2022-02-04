@@ -1,5 +1,6 @@
 ﻿#include <iostream>
 #include <math.h>
+#include <float.h>
 //Т.А. Павловская, Ю.А. Щупак
 //С/С++ Структурное программирование. Практикум
 //Семинар 2. Разветвляющиеся программы. Циклы.
@@ -16,21 +17,17 @@ int main()
 	double x, eps;
 	cout << "\nEnter a argument and precision: " << endl;
 	cin >> x >> eps;
-	bool done = true;//признак достижимости точности
 	double ch = 1, y = ch;//first term of series and initial value of sum
 	int n = 0;
-	for (n; fabs(ch) > eps; n++) {
+	for (n; fabs(ch) > eps && n < MaxIter; n++) {
 		ch *= x * x / ((2 * n + 1) * (2 * n + 2));//another member of the series
 		y += ch;//adding series member to the sum
-		if (n > MaxIter) {
-			cout << "\nThe series diverges!";
-			done = false; break;
-		}
 	}
-	if (done) {
+	if (n < MaxIter) {
 		cout << "function value: " << y << " for x = " << x << endl;
 		cout << " calculated after " << n << " iterations " << endl;
 	}
+	else cout << "\n The series diverges!" << endl;
 	return 0;
 }
 
