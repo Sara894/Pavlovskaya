@@ -21,9 +21,9 @@ int main()
 	cout << "Enter Xbegin, Xend, dX : ";
 	cin >> Xbegin >> Xend >> dX;
 	x = Xbegin;
-	printf("--------------------------------------\n");
-	printf("|        X        |         F        |\n");
-	printf("--------------------------------------\n");
+	        printf("--------------------------------------\n");
+	        printf("|        X        |         F        |\n");
+	        printf("--------------------------------------\n");
 	while (x <= Xend){
 		int t = ((int)a & (int)b) ^ (int)c;
 		double F;
