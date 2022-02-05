@@ -21,17 +21,19 @@ int main()
 	cout << "Enter Xbegin, Xend, dX : ";
 	cin >> Xbegin >> Xend >> dX;
 	x = Xbegin;
-	cout << "|    x    |     F     |" << endl;
+	printf("--------------------------------------\n");
+	printf("|        X        |         F        |\n");
+	printf("--------------------------------------\n");
 	while (x <= Xend){
 		int t = ((int)a & (int)b) ^ (int)c;
 		double F;
 		if (x < 1 && c != 0) { F = (a * x * x) + (b / c); }
 		else if (x > 1.5 && c == 0) { F = (x - a) / (x - c) * (x - c); }
 		else { F = (x * x) / (c * c); }
-		if(t == 0)
-			cout << "|  " << x << "   |   " << static_cast<int>(F) << "|" << endl;
+		if (t == 0)
+			printf("|%9.21f    |%9d      |\n", x, static_cast<int>(F));
 		else
-			cout << "|  " << x << "   |   " << F << "|" << endl;
+			printf("|%9.21f    |%9.21f      |\n", x, F);
 		x += dX;
 	}
 	return 0;
