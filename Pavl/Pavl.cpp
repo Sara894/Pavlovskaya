@@ -20,8 +20,6 @@ int main()
 	cout << "Enter the values of the following variables separated by a space: Xbegin,Xend,dX\n";
 	cin >> Xbegin >> Xend >> dX;
 	double E = DBL_EPSILON;
-	
-	
 	cout << "|      X       |        F       |      with exp()    |  n  |\n";
 	for (Xbegin; Xbegin <= Xend; Xbegin += dX)
 	{
