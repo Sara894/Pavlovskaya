@@ -1,40 +1,38 @@
 ﻿#include <iostream>
+#include <float.h>
+#include <math.h>
 //Т.А. Павловская, Ю.А. Щупак
 //С/С++ Структурное программирование. Практикум
 //Семинар 2. Разветвляющиеся программы. Циклы.
-//Task 1. Variant 11. 
-//Calculate and display on the screen in the form of a table the values 
-//of the function in the interval  from Xbegin to Xend in increments of 1 
-//The function F must take a real value if the expression (Ac and Bc) MOD2 Sc is not zero,
-//and an integer value otherwise.
-//The integer parts of the values a,b,c are denoted by Ac, Vc, Sc.
-//The operations And and MOD2 (addition modulo 2) are bitwise.
-//Enter the values a,b,c, Xbegin,Xend, dX from the keyboard.
+//Task 2. Variant 2. 
+//Calculate and display on the screen in the form of the table the values
+//of the function specified using the Taylor series, in the interval from beginning
+//to end in increments of dX with an accuracy of E.
+//Provide the table with a header.
+//Each row of the table must contain the value of the argument, value of the function 
+//and the number of summed members of the series.
 using namespace std;
 
 int main()
 {
-	double x,a, b, c;
-	cout << "Enter a,b,c : ";
-	cin >> a >> b >> c;
 	double Xbegin, Xend, dX;
-	cout << "Enter Xbegin, Xend, dX : ";
+	cout << "Enter the values of the following variables separated by a space: Xbegin,Xend,dX\n";
 	cin >> Xbegin >> Xend >> dX;
-	x = Xbegin;
-	        printf("--------------------------------------\n");
-	        printf("|        X        |         F        |\n");
-	        printf("--------------------------------------\n");
-	while (x <= Xend){
-		int t = ((int)a & (int)b) ^ (int)c;
-		double F;
-		if (x < 1 && c != 0) { F = (a * x * x) + (b / c); }
-		else if (x > 1.5 && c == 0) { F = (x - a) / (x - c) * (x - c); }
-		else { F = (x * x) / (c * c); }
-		if (t == 0)
-			printf("|%9.21f    |%9d         |\n", x, static_cast<int>(F));
-		else
-			printf("|%9.21f    |%9.21f      |\n", x, F);
-		x += dX;
+	double E = DBL_EPSILON;
+	
+	
+	cout << "|      X       |        F       |      with exp()    |  n  |\n";
+	for (Xbegin; Xbegin <= Xend; Xbegin += dX)
+	{
+		double sum = 0;//1 is first summand of the sum of the series
+		double term = 1;
+		int n = 0;
+		while (fabs(term) > E) {
+			sum += term;
+			term *= (-1) * Xbegin / (n + 1);
+			n++;
+		}
+		cout << "|    " << Xbegin << "   |     " << sum << "  |      "<<exp(-Xbegin)<<"    |  " << n << "  |" << endl;
 	}
 	return 0;
 }
