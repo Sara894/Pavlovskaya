@@ -11,6 +11,7 @@
 //Provide the table with a header.
 //Each row of the table must contain the value of the argument, value of the function 
 //and the number of summed members of the series.
+//e^(-x) = sum((-1)^n*x^n/n!)
 using namespace std;
 
 int main()
