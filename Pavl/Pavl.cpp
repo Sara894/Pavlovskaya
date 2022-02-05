@@ -31,7 +31,7 @@ int main()
 		else if (x > 1.5 && c == 0) { F = (x - a) / (x - c) * (x - c); }
 		else { F = (x * x) / (c * c); }
 		if (t == 0)
-			printf("|%9.21f    |%9d      |\n", x, static_cast<int>(F));
+			printf("|%9.21f    |%9d         |\n", x, static_cast<int>(F));
 		else
 			printf("|%9.21f    |%9.21f      |\n", x, F);
 		x += dX;
