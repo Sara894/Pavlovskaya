@@ -12,13 +12,13 @@ using namespace std;
 
 int main()
 {
-	const int n = 10;
+	const int n = 5;
 	int a[n];
 	int i, imax, imin, kol;
-	cout << "Enter " << n << "integer numbers: " << endl;
+	cout << "Enter " << n << " integer numbers: " << endl;
 	for (i = 0; i < n; i++) cin >> a[i];
 	for (i = 0; i < n; i++) cout << a[i] << " ";
-	for (i = imax = imin; i < n; i++) {
+	for (i = imax = imin = 0; i < n; i++) {
 		if (a[i] < a[imin]) imin = i;
 		if (a[i] > a[imax]) imax = i;
 	}
