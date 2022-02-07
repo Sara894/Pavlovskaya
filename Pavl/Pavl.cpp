@@ -13,22 +13,19 @@ using namespace std;
 int main()
 {
 	const int n = 5;
-	int a[n];
-	int i, imax, imin, kol;
-	cout << "Enter " << n << " integer numbers: " << endl;
-	for (i = 0; i < n; i++) cin >> a[i];
-	for (i = 0; i < n; i++) cout << a[i] << " ";
+	int a[n] = { -1,-1,-1,-1,-1};
+	int i, imax, imin, count;
 	for (i = imax = imin = 0; i < n; i++) {
-		if (a[i] < a[imin]) imin = i;
 		if (a[i] > a[imax]) imax = i;
+		if (a[i] < a[imin]) imin = i;
 	}
-	int d = 0;
-	if (imax < imin) d = 1;
-	else if (imax > imin) d = -1;
-	for (kol = 0, i = imax + d; i != imin; i += d) if (a[i] > 0) kol++;
-	cout << "\n Number of positive numbers: " << kol << endl;
+	cout << "\n\t max = " << a[imax] << " min = " << a[imin];//debugging
+	int ibeg = imax < imin ? imax : imin;
+	int iend = imax < imin ? imin : imax;
+	cout << "\n\t ibeg= " << ibeg << " iend= " << iend;
+	for (count = 0, i = ibeg + 1; i < iend; i++) {
+		if (a[i] > 0) count++;
+	}
+	cout << "Number of positive: " << count << endl;
 	return 0;
 }
- 
-
-
