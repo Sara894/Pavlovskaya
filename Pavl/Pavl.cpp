@@ -3,38 +3,32 @@
 #include <math.h>
 //Т.А. Павловская, Ю.А. Щупак
 //С/С++ Структурное программирование. Практикум
-//Семинар 2. Разветвляющиеся программы. Циклы.
-//Task 2. Variant 2. 
-//Calculate and display on the screen in the form of the table the values
-//of the function specified using the Taylor series, in the interval from beginning
-//to end in increments of dX with an accuracy of E.
-//Provide the table with a header.
-//Each row of the table must contain the value of the argument, value of the function 
-//and the number of summed members of the series.
-//e^(-x) = sum((-1)^n*x^n/n!)
+//Workshop 3. One-dimensional arrays and pointers.
+//Task 3.1. Number of elements between minimum and maximum
+//Write a program that, for an integer array of 10 elements, determines 
+//how many positive elements are located between its maximum and minimum elements.  ll
+
 using namespace std;
 
 int main()
 {
-	double Xbegin, Xend, dX;
-	cout << "Enter the values of the following variables separated by a space: Xbegin,Xend,dX\n";
-	cin >> Xbegin >> Xend >> dX;
-	double E = DBL_EPSILON;
-	cout << "|      X       |        F       |      with exp()    |  n  |\n";
-	for (Xbegin; Xbegin <= Xend; Xbegin += dX)
-	{
-		double sum = 0;//1 is first summand of the sum of the series
-		double term = 1;
-		int n = 0;
-		while (fabs(term) > E) {
-			sum += term;
-			term *= (-1) * Xbegin / (n + 1);
-			n++;
-		}
-		cout << "|    " << Xbegin << "   |     " << sum << "  |      "<<exp(-Xbegin)<<"    |  " << n << "  |" << endl;
+	const int n = 10;
+	int a[n] = { 1,3,-5,1,-2,1,-1,3,8,4 };
+	int i, imax, imin, count;
+	for (i = imax = imin = 0; i < n; i++) {
+		if (a[i] > a[imax]) imax = i;
+		if (a[i] < a[imin]) imin = i;
+	}
+	cout << "\n\t max = " << a[imax] << " min = " << a[imin];//debugging
+	int ibeg = imax < imin ? imax : imin;
+	int iend = imax < imin ? imin : imax;
+	cout << "\n\t ibeg= " << ibeg << " iend= " << iend;
+	for (count = 0, i = ibeg + 1; i < iend; i++) {
+		if (a[i] > 0) count++;
+		cout << "Number of positive: " << count << endl;
 	}
 	return 0;
 }
-
+ 
 
 
